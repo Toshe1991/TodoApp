@@ -34,7 +34,7 @@ def create_db_table(cur, conn):
 
 def insert_into_table(cur, task, conn):
     sql = '''
-        INSERT INTO todo(task, todo_timestamp, todo_date) VALUES(?, datetime('now','localtime'), date())
+        INSERT INTO todo(task, todo_timestamp, todo_date, scheduled_date) VALUES(?, datetime('now','localtime'), date(), date())
     '''
     cur.execute(sql, (task,))
     conn.commit()
