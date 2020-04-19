@@ -6,7 +6,7 @@ import datetime
 import os
 from functools import partial
 import configparser
-db
+
 config = configparser.ConfigParser()
 config.read("main.conf")
 

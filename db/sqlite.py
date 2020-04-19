@@ -9,7 +9,7 @@ def dict_factory(cursor, row):
 
 
 def open_db_connection():
-    conn = sqlite3.connect('todo.db')
+    conn = sqlite3.connect('db/todo.db')
     conn.row_factory = dict_factory
     cursor = conn.cursor()
 
@@ -25,7 +25,7 @@ def create_db_table(cur, conn):
         note TEXT,
         scheduled_date DATE,
         priority INT,
-        isdone BOOLEAN DEFAULT FALSE
+        is_done INT DEFAULT 0
         )
     """
     cur.execute(query)
@@ -63,7 +63,7 @@ def update_row(**kwargs):
 
 
 def connect_sqlite_db():
-    conn = sqlite3.connect('todo.db')
+    conn = sqlite3.connect('db/todo.db')
     cursor = conn.cursor()
 
     return cursor
