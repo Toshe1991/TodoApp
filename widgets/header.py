@@ -1,4 +1,10 @@
 import tkinter as tk
+import configparser
+
+config = configparser.ConfigParser()
+config.read("main.conf")
+
+palette = config["COLORS"]
 
 
 class Header(tk.Frame):

@@ -21,6 +21,7 @@ class TodoApp(tk.Tk):
         position_x = int(self.winfo_screenwidth()/2 - 400)
         position_y = int(self.winfo_screenheight()/2 - 300)
         self.geometry("800x600+{}+{}".format(position_x, position_y))
+        self.grid_rowconfigure(1, weight=1)
         self.grid_columnconfigure(0, weight=1)
         self.configure(background='#ffffff')
 
